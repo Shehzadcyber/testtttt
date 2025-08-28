@@ -1,0 +1,128 @@
+
+jQuery Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+jquery v1.2.6-1.2.6
+
+Vulnerability Description
+jQuery before 1.9.0 is vulnerable to Cross-site Scripting (XSS) attacks. The jQuery(strInput) function does not differentiate selectors from HTML in a reliable fashion. In vulnerable versions, jQuery determined whether the input was HTML by looking for the '<' character anywhere in the string, giving attackers more flexibility when attempting to construct a malicious payload. In fixed versions, jQuery only deems the input to be HTML if it explicitly starts with the '<' character, limiting exploitability only to attackers who can control the beginning of a string, which is far less common.
+
+
+
+SSL/TLS Not Implemented
+
+Vulnerability Description
+This scan target was connected to over an unencrypted connection. A potential attacker can intercept and modify data sent and received from this site.
+
+
+Password transmitted over HTTP
+Forms with credentials sent in clear text:
+
+    http://192.168.78.131/register.php
+
+    Form name: <empty>
+    Form action: validat.php
+    Form method: POST
+    Password input: password
+
+    http://192.168.78.131/validate.php
+
+    Form name: <empty>
+    Form action: authentication.php?jobid=29138450&empid=820620006
+    Form method: POST
+    Password input: password
+
+    http://192.168.78.131/proflogin.php
+
+    Form name: <empty>
+    Form action: profauthentication.php
+    Form method: POST
+    Password input: password
+
+    http://192.168.78.131/reclogin.php
+
+    Form name: <empty>
+    Form action: recauthentication.php
+    Form method: POST
+    Password input: password
+
+    http://192.168.78.131/recregister.php
+
+    Form name: <empty>
+    Form action: recvalidat.php
+    Form method: POST
+    Password input: password
+
+    http://192.168.78.131/validate.php
+
+    Form name: <empty>
+    Form action: authentication.php?jobid=15055774&empid=90026074
+    Form method: POST
+    Password input: password
+
+    http://192.168.78.131/validate.php
+
+    Form name: <empty>
+    Form action: authentication.php?jobid=311560910&empid=878927769
+    Form method: POST
+    Password input: password
+
+    http://192.168.78.131/validate.php
+
+    Form name: <empty>
+    Form action: authentication.php?jobid=&empid=
+    Form method: POST
+    Password input: password
+    
+    
+    
+    
+ Directory listings
+ Folders with directory listing enabled:
+
+    http://192.168.78.131/rokbox/
+    http://192.168.78.131/rokbox/rokbox/
+    http://192.168.78.131/rokbox/rokbox/themes/
+    http://192.168.78.131/rokbox/rokbox/themes/light/
+    http://192.168.78.131/Video/
+    http://192.168.78.131/css/
+    http://192.168.78.131/scripts/
+    http://192.168.78.131/Images/
+    http://192.168.78.131/downloads/
+    http://192.168.78.131/downloads/cvtemplates/
+    http://192.168.78.131/menu/
+    http://192.168.78.131/rss/
+    http://192.168.78.131/scripts/tiny_mce/
+    http://192.168.78.131/menu/images/
+    http://192.168.78.131/scripts/tiny_mce/langs/
+    http://192.168.78.131/Images/New%20Folder/
+    http://192.168.78.131/downloads/freeware/
+    http://192.168.78.131/Images/menu/
+    http://192.168.78.131/scripts/tiny_mce/plugins/
+    http://192.168.78.131/Data/
+    http://192.168.78.131/scripts/tiny_mce/utils/
+
+Vulnerability Descriptioncommon.up
+
+Directory listing is a web server function that displays the directory contents when there is no index file in a specific website directory. It is dangerous to leave this function turned on for the web server because it leads to information disclosure.
+
+
+
+
+Missing Content-Type Header
+Pages where the content-type header is not specified:
+
+    http://192.168.78.131/rokbox/rokbox/themes/light/Thumbs.db
+    http://192.168.78.131/Images/
+    http://192.168.78.131/reclogin.php~
+    http://192.168.78.131/Data/Thumbs.db
+
+Vulnerability Description
+These page(s) does not set a Content-Type header value. This value informs the browser what kind of data to expect. If this header is missing, the browser may incorrectly handle the data. This could lead to security problems.
+
+
+
+
+Version Disclosure (PHP)
+Attack Detailscommon.up
+Version detected: PHP/5.4.6-1ubuntu1.8.
+Vulnerability Description
+The web server is sending the X-Powered-By: response headers, revealing the PHP version.
